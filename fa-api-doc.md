@@ -500,7 +500,6 @@ Authorization: Token <your authorization token>
 ```jsonc
 {
     "product": 10, // ایدی محصول
-    "link": "https://www.aparat.com/UserName", // ادرس حساب کاربری
     "description": "Ads Description", // متن تبلیغات
 }
 ```
@@ -510,14 +509,14 @@ Authorization: Token <your authorization token>
 جزئیات سفارش ثبت شده برگشت داده خواهد شد.
 
 ```json
+
 {
   "product": 7,
-  "link": "aparat.com/UserName",
   "user": "Test@gmail.com",
   "status": "در صف⊷",
-  "tracking_id": "c15c700ec6c3",
-  "created": "2023-04-30 20:58:52",
-  "description": "Ads Description"
+  "description": "Ads Description",
+  "tracking_id": "1c91df9c4445",
+  "created": "2023-05-01 18:46:17"
 }
 
 ```
@@ -529,8 +528,6 @@ Authorization: Token <your authorization token>
 | استتوس کد |      توضیحات           |
 | ------------| ------------------ |
 | 200         | موفقیت آمیرز، نمایش جزئیات سفارش 
-| 400         | پارامتر لینک یافت نشد
-| 400         | لینک ارسال شده نامعبتر است
 | 400         | تایپ ولیو پارامتر product نا معتبر است
 | 400         | ایدی محصول ارسال شده مربوط به این دسته بندی نمی باشد
 | 400         | متن تبلیغ یافت نشد
