@@ -43,39 +43,62 @@ Authorization: Token <your authorization token>
 #### درخواست
 ---
 برای دریافت محصولات داخل سایت، یک درخواست GET را به آدرس زیر ارسال کنید:
-    
 <div dir="ltr">
 
     GET: /api/products/
 
 </div>
 
+> **نکته:** به صورت پیشفرض در هر صفحه حداقل 20 محصول نمایش داده می شود و حد اکثر 30 عدد، برای گرفتن محصولات بیشتر در هر صفحه و یا پجینیشن میتوانید از پارامتر های زیر استفاده کنید 
+
+#### پارامتر ها
+---
+<div dir="ltr">
+
+| پارامتر   |  نوع دیتا |      توضیحات      |
+| ----------- | -------| ------------|
+| page        | int    | شماره پیج
+| page_size   |  int   | تعداد محصولات نمایش داده شده در هر پیج، ماکسیموم 20 عدد
+
+</div>
+<br>
+
 #### پاسخ
 ---
 برای این درخواست، پاسخی به شکل زیر ارسال می‌شود که شامل لیست محصولات است:
 
 ```json
-[
-     {
-        "id":1,
-        "name":"",
-        "image":"http://example.com",
-        "discription":"product-details",
-        "count":100,
-        "price":12000,
-        "price_pro":6000,
-        "discount":0,
-        "category":[
-            {
-                "id":2,
-               "title": "لایک اپارات"
-            }
-        ]
+{
+  "count": 44,
+  "next": "http://:........./api/products/?page=2",
+  "previous": null,
+  "results": [
+    {
+      "id": 1,
+      "name": "100 لایک اپارات",
+      "image": "like.jpg",
+      "count": 100,
+      "price": 12000,
+      "price_pro": 6000,
+      "discount": 0,
+      "discription": "product-details",
     },
-    {"...":"..."}
-]
+    {
+      "id": 2,
+      "name": "200 لایک اپارات",
+      "image": "/media/products/2022/05/16/like.jpg",
+      "count": 200,
+      "price": 24000,
+      "price_pro": 12000,
+      "discount": 0,
+      "discription": "product-details",
+    }
+  ]
+}
+
 ```
 </details>
+
 
 
 
@@ -207,6 +230,8 @@ Authorization: Token <your authorization token>
 </div>
 
 </details>
+<br>
+<br>
 </details>
 
 
