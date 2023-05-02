@@ -513,7 +513,7 @@ Authorization: Token <your authorization token>
 ```jsonc
 {
     "product": 10, // ایدی محصول
-    "link": "https://www.aparat.com/UserName", // ادرس حساب کاربری
+    "link": "https://www.aparat.com/UserName", // آدرس حساب کاربری
 }
 ```
 
@@ -587,14 +587,13 @@ Authorization: Token <your authorization token>
 جزئیات سفارش ثبت شده برگشت داده خواهد شد.
 
 ```json
-
 {
   "product": 7,
   "user": "Test@gmail.com",
   "status": "در صف⊷",
-  "description": "Ads Description",
-  "tracking_id": "1c91df9c4445",
-  "created": "2023-05-01 18:46:17"
+  "tracking_id": "c15c700ec6c3",
+  "created": "2023-04-30 20:58:52",
+  "description": "Ads Description"
 }
 
 ```
