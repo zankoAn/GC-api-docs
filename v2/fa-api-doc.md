@@ -21,7 +21,7 @@ Authorization: Token <your authorization token>
 
 <div dri="ltr">
     
-```
+```python
 import requests
 import json
 
@@ -67,7 +67,7 @@ response = requests.get(
 برای دریافت دسته بندی های داخل سایت، یک درخواست GET را به آدرس زیر ارسال کنید:
 <div dir="ltr">
 
-```
+```python
 import requests
 
 headers = {
@@ -138,7 +138,7 @@ response = requests.get(
 <div dir="ltr">
 
     POST: /api/v2/order/create/
-```
+```python
 import requests
 import json
 
@@ -148,8 +148,8 @@ headers = {
     "Content-Type": "application/json"
 }
 data = {
-    "category": 2, // ایدی کتگوری
-    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "category": 2,
+    "link": "https://www.aparat.com/v/hashd",
     "count": 50
 }
 
@@ -158,18 +158,17 @@ response = requests.post(
     headers = headers,
     data = json.dumps(data)
 )
-
 ```
 </div>
 
 ### ریکوئست بادی
 #### 
 ---
-```json
+```jsonc
 {
     "category": 2, // ایدی کتگوری
     "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
-    "count": 50
+    "count": 50 // تعداد درخواستی
 }
 ```
 
@@ -223,7 +222,7 @@ response = requests.post(
 <div dir="ltr">
 
     POST: /api/v2/order/create/
-```
+```python
 import requests
 import json
 
@@ -232,9 +231,9 @@ headers = {
     "Content-Type": "application/json"
 }
 data = {
-    "category": 6, // ایدی محصول
-    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
-    "comment": ["test","test2","test3","test4"], // کامنت ها
+    "category": 6,
+    "link": "https://www.aparat.com/v/hashd",
+    "comment": ["test","test2","test3","test4"],
     "count": 20
 }
 
@@ -243,7 +242,6 @@ response = requests.post(
     headers = headers,
     data = json.dumps(data)
 )
-
 ```
 </div>
 
@@ -256,7 +254,7 @@ response = requests.post(
     "category": 6, // ایدی محصول
     "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
     "comment": ["test","test2","test3","test4"], // کامنت ها
-    "count": 20
+    "count": 20 // تعداد درخواستی
 }
 ```
 
@@ -312,7 +310,7 @@ response = requests.post(
 <div dir="ltr">
 
     POST: /api/v2/order/create/
-```
+```python
 import requests
 import json
 
@@ -321,9 +319,9 @@ headers = {
     "Content-Type": "application/json"
 }
 data = {
-    "category": 9, // ایدی کتگوری
-    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
-    "count": 50 // تعداد ساعت درخواستی
+    "category": 9,
+    "link": "https://www.aparat.com/v/hashd",
+    "count": 50
 }
 
 response = requests.post(
@@ -331,7 +329,6 @@ response = requests.post(
     headers = headers,
     data = json.dumps(data)
 )
-
 ```
 </div>
 
@@ -341,8 +338,8 @@ response = requests.post(
 ```jsonc
 {
     "category": 9, // ایدی کتگوری
-    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو,
-    "count": 50
+    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "count": 50  // تعداد ساعت درخواستی
 }
 ```
 
@@ -394,7 +391,7 @@ response = requests.post(
 <div dir="ltr">
 
     POST: /api/v2/order/create/
-```
+```python
 import requests
 import json
 
@@ -403,8 +400,8 @@ headers = {
     "Content-Type": "application/json"
 }
 data = {
-    "category": 4, // ایدی کتگوری 
-    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "category": 4,
+    "link": "https://www.aparat.com/v/hashd",
     "count": 50
 }
 
@@ -413,7 +410,6 @@ response = requests.post(
     headers = headers,
     data = json.dumps(data)
 )
-
 ```
 </div>
 
@@ -424,7 +420,7 @@ response = requests.post(
 {
     "category": 4, // ایدی کتگوری 
     "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
-    "count": 50 
+    "count": 50  // تعداد درخواستی
 }
 ```
 
@@ -476,7 +472,7 @@ response = requests.post(
 <div dir="ltr">
 
     POST: /api/v2/order/create/
-```
+```python
 import requests
 import json
 
@@ -485,7 +481,7 @@ headers = {
     "Content-Type": "application/json"
 }
 data = {
-    "category": 8, // ایدی کتگوری 
+    "category": 8,
     "count": 50,
     "description": "متن تبلیغات"
 }
@@ -506,7 +502,7 @@ response = requests.post(
 ```jsonc
 {
     "category": 8, // ایدی کتگوری 
-    "count": 50,
+    "count": 50, // تعداد درخواستی
     "description": "متن تبلیغات"
 }
 ```
