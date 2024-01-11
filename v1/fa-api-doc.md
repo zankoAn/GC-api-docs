@@ -30,8 +30,14 @@ Authorization: Token <your authorization token>
 
 
 
-
 # اندپوینت ها
+
+> **نکته:**  در قسمت استتوس کد ها برای هر اند پوینت توضیحات به زبان فارسی ترجمه شده است و متن دقیق ارور را میتوانید از داکیومنت انگلیسی  مشاهده کنید.
+
+[EN-Documentation](en-api-documentation.md)
+<br>
+[FA-Documentation](fa-api-documentation.md)
+
 ---
 
 <details>
