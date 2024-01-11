@@ -12,50 +12,35 @@ Authorization: Token <your authorization token>
 ```
 </div>
 
+<div dir="ltr">
 
-<div dir="rtl">
-
-# گرفتن اطلاعات توکن
+### گرفتن اطلاعات یوزر مانند موجودی و تعداد سفارش
 
 </div>
 
+
+<div dri="ltr">
+    
 ```
 import requests
+import json
+
 
 headers = {
     "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
     "Content-Type": "application/json"
 }
 
-request = request.get(
-    url = "https://gray-city.ir/api/v2/user/token/",
-    headers=headers
-)
-
-```
-
-<div dir="rtl">
-
-# گرفتن اطلاعات یوزر مانند موجودی و تعداد سفارش
-
-</div>
-
-```
-import requests
-
-headers = {
-    "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
-    "Content-Type": "application/json"
-}
-
-request = request.get(
+response = requests.get(
     url = "https://gray-city.ir/api/v2/user/info/",
     headers=headers
 )
 
 ```
 
-#### لطفاً اطمینان حاصل کنید که توکن اعتبارسنجی شما معتبر است، در غیر این صورت ممکن است با خطاهای زیر روبرو شوید.
+</div>
+
+###  لطفاً اطمینان حاصل کنید که توکن اعتبارسنجی شما معتبر است، در غیر این صورت ممکن است با خطاهای زیر روبرو شوید.
 
 <div dir="ltr">
 
@@ -90,7 +75,7 @@ headers = {
     "Content-Type": "application/json"
 }
 
-request = request.get(
+response = requests.get(
     url = "https://gray-city.ir/api/v2/categories/",
     headers=headers
 )
@@ -155,6 +140,8 @@ request = request.get(
     POST: /api/v2/order/create/
 ```
 import requests
+import json
+
 
 headers = {
     "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
@@ -166,10 +153,10 @@ data = {
     "count": 50
 }
 
-request = request.post(
+response = requests.post(
     url = "https://gray-city.ir/api/v2/order/create/",
     headers = headers,
-    data = data
+    data = json.dumps(data)
 )
 
 ```
@@ -235,8 +222,29 @@ request = request.post(
 
 <div dir="ltr">
 
-    POST: /api/order/create/
+    POST: /api/v2/order/create/
+```
+import requests
+import json
 
+headers = {
+    "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
+    "Content-Type": "application/json"
+}
+data = {
+    "category": 6, // ایدی محصول
+    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "comment": ["test","test2","test3","test4"], // کامنت ها
+    "count": 20
+}
+
+response = requests.post(
+    url = "https://gray-city.ir/api/v2/order/create/",
+    headers = headers,
+    data = json.dumps(data)
+)
+
+```
 </div>
 
 ### ریکوئست بادی
@@ -303,8 +311,28 @@ request = request.post(
 
 <div dir="ltr">
 
-    POST: /api/order/watch-time/create/
+    POST: /api/v2/order/create/
+```
+import requests
+import json
 
+headers = {
+    "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
+    "Content-Type": "application/json"
+}
+data = {
+    "category": 9, // ایدی کتگوری
+    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "count": 50 // تعداد ساعت درخواستی
+}
+
+response = requests.post(
+    url = "https://gray-city.ir/api/v2/order/create/",
+    headers = headers,
+    data = json.dumps(data)
+)
+
+```
 </div>
 
 ### ریکوئست بادی
@@ -312,7 +340,7 @@ request = request.post(
 
 ```jsonc
 {
-    "category": 9, // ایدی محصول
+    "category": 9, // ایدی کتگوری
     "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو,
     "count": 50
 }
@@ -365,9 +393,28 @@ request = request.post(
 
 <div dir="ltr">
 
-    POST: /api/order/follower/create/
-    POST: /api/order/follower-pro/create/
+    POST: /api/v2/order/create/
+```
+import requests
+import json
 
+headers = {
+    "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
+    "Content-Type": "application/json"
+}
+data = {
+    "category": 4, // ایدی کتگوری 
+    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "count": 50
+}
+
+response = requests.post(
+    url = "https://gray-city.ir/api/v2/order/create/",
+    headers = headers,
+    data = json.dumps(data)
+)
+
+```
 </div>
 
 ### ریکوئست بادی
@@ -375,8 +422,9 @@ request = request.post(
 
 ```jsonc
 {
-    "product": 10, // ایدی محصول
-    "link": "https://www.aparat.com/UserName", // آدرس حساب کاربری
+    "category": 4, // ایدی کتگوری 
+    "link": "https://www.aparat.com/v/hashd", // آدرس ویدیو
+    "count": 50 
 }
 ```
 
@@ -386,7 +434,7 @@ request = request.post(
 
 ```json
 {
-  "product": 7,
+  "category": 4,
   "link": "aparat.com/UserName",
   "user": "Test@gmail.com",
   "status": "در صف⊷",
@@ -427,17 +475,39 @@ request = request.post(
 
 <div dir="ltr">
 
-    POST: /api/order/ads/create/
+    POST: /api/v2/order/create/
+```
+import requests
+import json
 
+headers = {
+    "Authorization": "Token 1234567890qwertyuiopasdfghjkldududuuzxcvbnm",
+    "Content-Type": "application/json"
+}
+data = {
+    "category": 8, // ایدی کتگوری 
+    "count": 50,
+    "description": "متن تبلیغات"
+}
+
+response = requests.post(
+    url = "https://gray-city.ir/api/v2/order/create/",
+    headers = headers,
+    data = json.dumps(data)
+)
+
+```
 </div>
+
 
 ### ریکوئست بادی
 ---
 
 ```jsonc
 {
-    "product": 10, // ایدی محصول
-    "description": "Ads Description", // متن تبلیغات
+    "category": 8, // ایدی کتگوری 
+    "count": 50,
+    "description": "متن تبلیغات"
 }
 ```
 
@@ -447,7 +517,7 @@ request = request.post(
 
 ```json
 {
-  "product": 7,
+  "category": 8,
   "user": "Test@gmail.com",
   "status": "در صف⊷",
   "tracking_id": "c15c700ec6c3",
@@ -491,7 +561,7 @@ request = request.post(
 
 <div dir="ltr">
 
-    GET: /api/order/tracking/?tracking_id={tracking_id}
+    GET: /api/v2/order/tracking/?tracking_id={tracking_id}
 
 </div>
 
