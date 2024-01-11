@@ -180,7 +180,7 @@ response = requests.post(
 {
 "category": 6,
 "link": "https://www.aparat.com/v/hCc0O",
-"user": "adamak.tnh@gmail.com",
+"user": "Test@gmail.com",
 "status": "در صف⊷",
 "tracking_id": "d6a10c3c7fbf",
 "created": "2024-01-10 18:18:14",
